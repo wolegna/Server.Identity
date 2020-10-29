@@ -1,6 +1,6 @@
 pragma solidity ^0.6.0;
 
-contract SignalAt2PartyConfimation {
+contract SignalAt2PartyConfirmation {
     enum StateClient { PROPOSAL_SEND, PROPOSAL_AGREED, PROPOSAL_DENIED, AWAITING_TRANSFER, AWAITING_DELIVERY, COMPLETE }
     enum StateDeliverer { PROPOSAL_SEND, PROPOSAL_AGREED, PROPOSAL_DENIED, AWAITING_TRANSFER, AWAITING_DELIVERY, COMPLETE }
     StateClient private currentStateClient;
