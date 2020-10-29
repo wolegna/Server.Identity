@@ -24,8 +24,7 @@ contract SignalAt2PartyConfirmation {
         currentStateClient = StateClient.PROPOSAL_SEND;
     }
     
-    bool agreed;
-    function ProposalReply() onlyDeliverer public {
+    function ProposalReply(bool agreed) onlyDeliverer public {
         require(currentStateClient == StateClient.PROPOSAL_SEND);
         if (agreed) {
             currentStateDeliverer = StateDeliverer.PROPOSAL_AGREED;
