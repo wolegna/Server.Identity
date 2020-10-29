@@ -1,0 +1,20 @@
+{
+  "name": "cherryid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@idworks/jolocom-lib": "3.0.0",
+    "@jolocom/sdk": "^1.0.0-rc10",
+    "@jolocom/sdk-storage-typeorm": "^3.0.0",
+    "jest": "^26.6.1",
+    "jolocom-lib": "^5.1.0-rc7",
+    "mocha": "^8.2.0",
+    "yarn": "^1.22.10"
+  }
+}
