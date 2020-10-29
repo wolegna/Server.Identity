@@ -15,7 +15,7 @@ var demoContract = web3.eth.contract([
         "inputs": [
             {
                 "internalType": "address payable",
-                "name": "_Client",
+                "name": "_client",
                 "type": "address"
             },
             {
@@ -62,29 +62,16 @@ var demoContract = web3.eth.contract([
     },
     {
         "inputs": [],
-        "name": "WorkDeliverd",
+        "name": "WorkDelivered",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
     },
     {
         "inputs": [],
-        "name": "getBalance",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "transfer",
+        "name": "Transfer",
         "outputs": [],
-        "stateMutability": "payable",
+        "payable": true,
         "type": "function"
     }
 ]);
@@ -105,7 +92,7 @@ document.getElementById('confrec').addEventListener('click', function () {
 });
 
 document.getElementById('confdel').addEventListener('click', function () {
-    demoUser.WorkDeliverd({
+    demoUser.WorkDelivered({
         from: web3.eth.accounts[1]
     })
 });
@@ -114,8 +101,8 @@ document.getElementById('trans').addEventListener('click', function () {
     demoUser.transfer()
 });
 
-var XAMOUNT = document.getElementById('AmountButton').addEventListener('click', function () {
+/*var XAMOUNT = document.getElementById('AmountButton').addEventListener('click', function () {
     demoUser.getBalance()
 });
 
-document.getElementById("insert").innerHTML = XAMOUNT
+document.getElementById("insert").innerHTML = XAMOUNT*/
