@@ -1,5 +1,3 @@
-const BigNumber = require('bignumber.js');
-
 if (typeof web3 !== 'undefined') {
     web3 = new Web3(web3.currentProvider);
     console.log(web3);
@@ -28,27 +26,28 @@ var demoContract = web3.eth.contract([
         "type": "constructor"
     },
     {
-        "anonymous": false,
         "inputs": [
             {
-                "indexed": false,
-                "internalType": "address",
-                "name": "sender",
-                "type": "address"
-            },
-            {
-                "indexed": false,
-                "internalType": "uint256",
-                "name": "amount",
-                "type": "uint256"
+                "internalType": "bool",
+                "name": "agreed",
+                "type": "bool"
             }
         ],
-        "name": "LogFundsReceived",
-        "type": "event"
+        "name": "ProposalReply",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
     },
     {
         "inputs": [],
-        "name": "SatisfiedCustomer",
+        "name": "ProposalSend",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "SatisfiedClient",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -62,21 +61,23 @@ var demoContract = web3.eth.contract([
     },
     {
         "inputs": [],
-        "name": "WorkDelivered",
+        "name": "Transfer",
         "outputs": [],
-        "stateMutability": "nonpayable",
+        "stateMutability": "payable",
         "type": "function"
     },
     {
         "inputs": [],
-        "name": "Transfer",
+        "name": "WorkDelivered",
         "outputs": [],
-        "payable": true,
+        "stateMutability": "nonpayable",
         "type": "function"
     }
 ]);
 
-var demoUser = demoContract.at('0xA788a7982BE56cC25e787E92D4A05B706542fC14');
+var demoUser = demoContract.at('0xDfF4e073936525323C6785FDB4182CCF940F604F');
+
+var STATE = false
 
 document.getElementById('sendButton').addEventListener('click', function () {
     demoUser.SignalAmount({
@@ -86,7 +87,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
 });
 
 document.getElementById('confrec').addEventListener('click', function () {
-    demoUser.SatisfiedCustomer({
+    demoUser.SatisfiedClient({
         from: web3.eth.accounts[0]
     })
 });
@@ -98,11 +99,21 @@ document.getElementById('confdel').addEventListener('click', function () {
 });
 
 document.getElementById('trans').addEventListener('click', function () {
-    demoUser.transfer()
+    demoUser.Transfer()
 });
 
-/*var XAMOUNT = document.getElementById('AmountButton').addEventListener('click', function () {
-    demoUser.getBalance()
+document.getElementById('Accept').addEventListener('click', function () {
+    STATE = true
 });
 
-document.getElementById("insert").innerHTML = XAMOUNT*/
+document.getElementById('Deny').addEventListener('click', function () {
+    STATE = false
+});
+
+document.getElementById('reply').addEventListener('click', function () {
+    demoUser.ProposalReply(STATE)
+});
+
+document.getElementById('sendProp').addEventListener('click', function () {
+    demoUser.ProposalSend()
+});
