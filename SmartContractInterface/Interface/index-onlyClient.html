@@ -8,6 +8,13 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="./node_modules/web3/dist/web3.min.js"></script>
     <script src="./node_modules/bignumber.js"></script>
+    <script>
+    window.onerror = function (msg) {
+        msg = msg.replace('Error: VM Exception while processing transaction: revert', 'Error: ')
+        alert(msg)
+        return true
+    }
+    </script>
 </head>
 <body>
     <div class="header">
@@ -15,6 +22,8 @@
             <h1>Smart Contract Interface</h1>
         </header>
     </div>
+
+
     <div class="section">
         <section>
             <h1 style="text-align: center">Client: To Do's</h1>
@@ -52,6 +61,7 @@
             <p></p>
         </section>
     </div>
-    <script type="text/javascript" src="script-onlyClient.js"></script>
+    <script type="text/javascript" src="script-onlyClient.js">
+    </script>
 </body>
 </html>
