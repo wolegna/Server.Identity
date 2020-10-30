@@ -49,7 +49,7 @@ var demoContract = web3.eth.contract([
     }
 ]);
 
-var demoUser = demoContract.at('0xDfF4e073936525323C6785FDB4182CCF940F604F');
+var demoUser = demoContract.at('0x1dc3F241D93d296a54EadaBDfB64C0b3a02a00fA');
 
 var STATE = false
 
