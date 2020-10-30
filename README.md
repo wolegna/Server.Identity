@@ -31,6 +31,8 @@ The deliverers can accept the smart contract and post their solution in the smar
 # The 5 major steps
 Cooporate through note consule, ganazi.cli
 
+Disclaimer: Node_modules are not included in the files.
+
 ## Smart Contract in solidity
 - [x] SignalAmount: Client can activate the smart contract.
 - [x] WorkDelivered: Deliverers can confirm delivery of work.
