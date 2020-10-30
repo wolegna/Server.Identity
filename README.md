@@ -1,26 +1,27 @@
 # Definition of roles
-### **Identities custodian**
-The semi trusted third party is a role that controls the contract. The semi trusted third party will be a third party that is hosting the smart contract. This will probably be Odyssey. This semi trusted third party will be theh owner of the contract and can moderate the contract if necessary.
+### **The Custodian**
+This semi-trusted third party controls and hosts the smart contract. Also, it maintains the identities of other parties, such as the client and the deliverers. The custodian will probably be Odyssey. In this way, Odyssey will be the owner of the contract and is able to moderate it, if necessary.
 
 ### **The Client**
-The client is the party that offers the smart contract. The client wants a problem solved and are looking for people solving that problem. The client can put in a description of the problem, what kind of solution they are expecting and the amount of money/tokens they are willing to pay.
+The client is the party that offers the smart contract. The client has a problem that needs to be solved. Therefore, the client will send a proposal to people who can solve that problem. The client can put in a description of what needs to be solved, what kind of solution they are expecting, and the amount of money or tokens they are willing to pay.
 
 ### **The Deliverers**
-The deliverers are the people that will accept the smart contracts offered by the client. These people are looking for jobs and tasks on the platform.
+The deliverers are the party who will accept or deny the proposal that is offered by the client. They are looking for jobs and tasks to complete to earn money or tokens.
 
 # The use case
-In this use case the semi trusted third party will have set up the smart contract on their platform, a client will set up a listing for a certain price in order to solve a certain problem, which can be described.
+The custodian will set up the smart contract on its platform. A client will set up a listing for a certain price in order to solve a certain problem, which can be described. This proposal is then send to the deliverers.
 
-The deliverers can accept the smart contract and post their solution in the smart contract. After the client accepts the solution to the smart contract, the deliverers will receive their payment via a signal amount that will initiate a transfer in for example another smart contract.
+The deliverers can accept the proposal and post their solution in the smart contract. After the client accepts the posted solution in the smart contract, the deliverers will receive their payment via a signal amount that will initiate a transfer, in, for example, another smart contract.
 
 # What the smart contract is supposed to do:
-- [ ] Client X defines what task he wants completed/what problem solved.
-- [ ] Client X and (multiple) deliverers decide on price and input to complete the task.
-- [ ] Client sets signal amount for each deliverer and their wallet address
-- [ ] Client X deposits the signal amount on the smart contract
-- [ ] Deliverers complete contract
-- [ ] Client X and deliverers Y validate completion
-- [ ] Contract Z Pays each deliverer
+- [ ] Client defines what problem needs to be solved.
+- [ ] Client sends a proposal of this problem to the smart contract.
+- [ ] Deliverers receives that proposal, and then accepts or denies it.
+- [ ] Client sets a signal amount for the deliverers.
+- [ ] Client deposits the signal amount to the smart contract.
+- [ ] Deliverers confirm the delivery of their solution.
+- [ ] Client confirms the receivement of the delivery.
+- [ ] Smart contract transfers the deposit to the deliverers.
 
 # What other tasks will have to be completed:
 - [ ] Separate interfaces for each of the roles
@@ -33,18 +34,20 @@ Cooporate through note consule, ganazi.cli
 
 Disclaimer: Node_modules are not included in the files.
 
-## Smart Contract in solidity
-- [x] SignalAmount: Client can activate the smart contract.
+## Smart Contract's functions in solidity
+- [ ] ProposalDescription: Client can set the description of the proposal (task/problem).
+- [x] ProposalSend: Client can send its proposal.
+- [x] ProposalReply: Deliverers can accept or deny that proposal.
+- [x] SignalAmount: Client can deposit the signal amount.
 - [x] WorkDelivered: Deliverers can confirm delivery of work.
-- [x] SatisifiedCustomer: Client can confirm satisfaction of delivery
-- [x] Transfer: Deliverers and clients can tranfer the funds one the Client and the Deliverers have both confirmed delivery and satisfaction.
+- [x] SatisfiedClient: Client can confirm satisfaction of delivery
+- [x] Transfer: Deliverers and clients can tranfer the deposit after they have confirmed the delivery and satisfaction of the delivery.
 - [ ] SetPrice: Client can set a price.
 - [ ] AcceptPrice: Deliverers can acccept the price.
-- [ ] Decription of task/problem can be added.
 
 ## Smart Contract in HTML & JavaScript + wallet = Interface for clients
-- [ ] Clients can acces this portal using their self soverign identity. (or web2)
-- [ ] Clients can sent signalamount to the smart contract.
+- [ ] Clients can access this portal using their self soverign identity. (or web2)
+- [ ] Clients can send signalamount to the smart contract.
 - [ ] Clients can add a description of task/problem.
 - [ ] Clients can set the price they want to pay to each deliverer.
 - [ ] Clients can confirm satisfaction of delivered material.
