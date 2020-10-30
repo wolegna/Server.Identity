@@ -9,9 +9,10 @@ The client is the party that offers the smart contract. The client has a problem
 The deliverers are the party who will accept or deny the proposal that is offered by the client. They are looking for jobs and tasks to complete to earn money or tokens.
 
 # The use case
-The custodian will set up the smart contract on its platform. A client will set up a listing for a certain price in order to solve a certain problem, which can be described. This proposal is then send to the deliverers.
+The custodian will set up the smart contract on its platform. A client will describe the problem, sets up a price, and sends this proposal to the smart contract. 
+The deliverers receive the proposal and can accept or deny it. When accepted, the client can deposit a signal amount to the smart contract.
 
-The deliverers can accept the proposal and post their solution in the smart contract. After the client accepts the posted solution in the smart contract, the deliverers will receive their payment via a signal amount that will initiate a transfer, in, for example, another smart contract.
+When the deliverers solved the problem, they send their solution to the smart contract. After the client accepts the posted solution in the smart contract, the deliverers will receive their payment via a signal amount that will initiate a transfer, in, for example, another smart contract.
 
 # What the smart contract is supposed to do:
 - [ ] Client defines what problem needs to be solved.
