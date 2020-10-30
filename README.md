@@ -1,6 +1,6 @@
 # Definition of roles
 ### **The Custodian**
-This semi-trusted third party controls and hosts the smart contract. Also, it maintains the identities of other parties, such as the client and the deliverers. The custodian will probably be Odyssey. In this way, Odyssey will be the owner of the contract and is able to moderate it, if necessary.
+This trusted third party controls and hosts the smart contract. Also, it maintains the identities of other parties, such as the client and the deliverers. The custodian will probably be Odyssey. In this way, Odyssey will be the owner of the contract and is able to moderate it, if necessary.
 
 ### **The Client**
 The client is the party that offers the smart contract. The client has a problem that needs to be solved. Therefore, the client will send a proposal to people who can solve that problem. The client can put in a description of what needs to be solved, what kind of solution they are expecting, and the amount of money or tokens they are willing to pay.
@@ -15,13 +15,14 @@ The deliverers can accept the proposal and post their solution in the smart cont
 
 # What the smart contract is supposed to do:
 - [ ] Client defines what problem needs to be solved.
-- [ ] Client sends a proposal of this problem to the smart contract.
-- [ ] Deliverers receives that proposal, and then accepts or denies it.
-- [ ] Client sets a signal amount for the deliverers.
-- [ ] Client deposits the signal amount to the smart contract.
-- [ ] Deliverers confirm the delivery of their solution.
-- [ ] Client confirms the receivement of the delivery.
-- [ ] Smart contract transfers the deposit to the deliverers.
+- [x] Client sends a proposal of this problem to the smart contract.
+- [ ] Deliverers receives the proposal description.
+- [x] Deliverers accepts or denies this proposal.
+- [x] Client sets a signal amount for the deliverers.
+- [x] Client deposits the signal amount to the smart contract.
+- [x] Deliverers confirm the delivery of their solution.
+- [x] Client confirms the receivement of the delivery.
+- [x] Smart contract transfers the deposit to the deliverers.
 
 # What other tasks will have to be completed:
 - [ ] Separate interfaces for each of the roles
