@@ -15,6 +15,11 @@ var demoContract = web3.eth.contract([
                 "internalType": "address payable",
                 "name": "_client",
                 "type": "address"
+            },
+            {
+                "internalType": "address payable",
+                "name": "_deliverer",
+                "type": "address"
             }
         ],
         "stateMutability": "nonpayable",
@@ -22,6 +27,38 @@ var demoContract = web3.eth.contract([
     },
     {
         "inputs": [],
+        "name": "DisplayProposal",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bool",
+                "name": "agreed",
+                "type": "bool"
+            }
+        ],
+        "name": "ProposalReply",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "description",
+                "type": "string"
+            }
+        ],
         "name": "ProposalSend",
         "outputs": [],
         "stateMutability": "nonpayable",
@@ -47,10 +84,17 @@ var demoContract = web3.eth.contract([
         "outputs": [],
         "stateMutability": "payable",
         "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "WorkDelivered",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
     }
 ]);
 
-var demoUser = demoContract.at('0x1dc3F241D93d296a54EadaBDfB64C0b3a02a00fA');
+var demoUser = demoContract.at('0x295f20f07Eb661D9860ab23B5493c6cF61b6bFbD');
 
 var STATE = false
 
@@ -72,6 +116,6 @@ document.getElementById('trans').addEventListener('click', function () {
 });
 
 document.getElementById('sendProp').addEventListener('click', function () {
-    demoUser.ProposalSend()
+    demoUser.ProposalSend(String(document.getElementById('proposalDescr').value)
+    )
 });
-
