@@ -1,72 +1,93 @@
+# Introduction
+This file has been created in order to give insights in the smart contracts field assignment. 
+
 # Definition of roles
-### **The Custodian**
-This trusted third party controls and hosts the smart contract. Also, it maintains the identities of other parties, such as the client and the deliverers. The custodian will probably be Odyssey. In this way, Odyssey will be the owner of the contract and is able to moderate it, if necessary.
+### **Identities Custodian**
+The identities custodian is a role that controls the contract, further named as Custodian. The custodian will be a trusted third party who will host the smart contract, most likely Odyssey. The Custodian wil be able to acces and moderate both the Client's side, as well as the Deliverers' side.
 
 ### **The Client**
-The client is the party that offers the smart contract. The client has a problem that needs to be solved. Therefore, the client will send a proposal to people who can solve that problem. The client can put in a description of what needs to be solved, what kind of solution they are expecting, and the amount of money or tokens they are willing to pay.
+The client is the party that offers the smart contract. The client wants a problem solved and are looking for people solving that problem. The client can put in a description of the problem, what kind of solution they are expecting and the amount of money/tokens they are willing to pay.
 
 ### **The Deliverers**
-The deliverers are the party who will accept or deny the proposal that is offered by the client. They are looking for jobs and tasks to complete to earn money or tokens.
+The deliverers are the people that will accept the smart contracts offered by the client. These people are looking for jobs and tasks on the platform.
 
 # The use case
-The custodian will set up the smart contract on its platform. A client will describe the problem, sets up a price, and sends this proposal to the smart contract. 
-The deliverers receive the proposal and can accept or deny it. When accepted, the client can deposit a signal amount to the smart contract.
+In this use case the custodian, or trusted third party, will have set up the smart contract on their platform, a client will set up a listing for a certain price in order to solve a certain problem, which can be described.
 
-When the deliverers solved the problem, they send their solution to the smart contract. After the client accepts the posted solution in the smart contract, the deliverers will receive their payment via a signal amount that will initiate a transfer, in, for example, another smart contract.
+The deliverers can accept the smart contract and post their solution in the smart contract. After the client accepts the solution to the smart contract, the deliverers will receive their payment via a signal amount that will initiate a transfer via for example another smart contract.
 
 # What the smart contract is supposed to do:
-- [ ] Client defines what problem needs to be solved.
-- [x] Client sends a proposal of this problem to the smart contract.
-- [ ] Deliverers receives the proposal description.
-- [x] Deliverers accepts or denies this proposal.
-- [x] Client sets a signal amount for the deliverers.
-- [x] Client deposits the signal amount to the smart contract.
-- [x] Deliverers confirm the delivery of their solution.
-- [x] Client confirms the receivement of the delivery.
-- [x] Smart contract transfers the deposit to the deliverers.
+- [x] Client X defines what task he wants completed/what problem solved.
+- [ ] Client X and (multiple) deliverers decide on the price and input to complete the task.
+- [x] Client X deposits the signal amount on the smart contract, this signal amount will trigger another smart contract in which the transaction is regulated.
+- [x] Deliverers complete contract
+- [x] Client X and Deliverers Y validate completion
+- [x] Contract Z Pays each deliverer
 
 # What other tasks will have to be completed:
-- [ ] Separate interfaces for each of the roles
-- [ ] Identities custodian/guardian can overwrite both sides.
-- [ ] 
+- [x] Have a working smart contract contract
+- [x] Have a separate working interface for the Client and the Deliverer
+- [ ] Identities custodian can overwrite and moderate both sides of the contract.
+- [ ] Self Sovereign Identities have to be working.
 - [ ] 
 
 # The 5 major steps
-Cooporate through note consule, ganazi.cli
+Cooperate through note console, ganazi.cli
 
-Disclaimer: Node_modules are not included in the files.
-
-## Smart Contract's functions in solidity
-- [ ] ProposalDescription: Client can set the description of the proposal (task/problem).
-- [x] ProposalSend: Client can send its proposal.
-- [x] ProposalReply: Deliverers can accept or deny that proposal.
-- [x] SignalAmount: Client can deposit the signal amount.
+## Smart Contract in solidity
+- [x] SignalAmount: Client can activate the smart contract.
 - [x] WorkDelivered: Deliverers can confirm delivery of work.
-- [x] SatisfiedClient: Client can confirm satisfaction of delivery
-- [x] Transfer: Deliverers and clients can tranfer the deposit after they have confirmed the delivery and satisfaction of the delivery.
+- [x] SatisifiedCustomer: Client can confirm satisfaction of delivery
+- [x] Transfer: Deliverers and clients can transfer the funds one the Client and the Deliverers have both confirmed delivery and satisfaction.
+- [x] Decription of task/problem can be added.
 - [ ] SetPrice: Client can set a price.
-- [ ] AcceptPrice: Deliverers can acccept the price.
+- [ ] AcceptPrice: Deliverers can accept the price.
 
-## Smart Contract in HTML & JavaScript + wallet = Interface for clients
-- [ ] Clients can access this portal using their self soverign identity. (or web2)
-- [ ] Clients can send signalamount to the smart contract.
+
+## Self Sovereign Identities
+- [ ] Client and Deliverers need to be able to be able to use the interface using Self Sovereign Identities.
+
+## Client en Deliverers user interface
+The smart contract needs to be accessible for both the Client and the Deliverer separately. In order to make this possible, 7 files were created. Three general files, two specifically for the Client and two specifically for the Deliverer.
+
+General files:
+* styles.css
+* package-lock.json
+* package.json
+
+For the Client:
+* index-onlyClient.html
+* script-onlyClient.js
+
+For the Deliverer:
+* index-onlyDeliverer.html
+* script-onlyDeliverer.js
+
+### **styles.css**
+.css stands for Cascading Style Sheet. .css files can control the layout of multiple web pages all at once.
+
+### **package-lock.json**
+This file is automatically generated and stores the exact, versioned dependency tree of projects where npm modifies either the node_modules tree or package.json.
+
+### **package.json**
+This file is automatically generated as well and exists at the root of a JavaScript/Node project. This file holds metadata relevant to the projects.
+
+### **index-onlyClient/Deliverer.html**
+.html files are files that are created in order to format the structure of a webpage.
+
+### **script-onlyClients/Deliverer.js**
+A JavaScript to communicate between the smart contract (solidity) and the .html file.
+
+### **Necessary functions of the user interface for the Client's side:**
+- [ ] Clients can acces this portal using their self sovereign identity. (or web2)
+- [ ] Clients can sent signalamount to the smart contract.
 - [ ] Clients can add a description of task/problem.
 - [ ] Clients can set the price they want to pay to each deliverer.
 - [ ] Clients can confirm satisfaction of delivered material.
 - [ ] Client can activate payment of the contract
 
-- [ ] index.html file = web interface. 
-
-## Smart Contract in HTML & JavaScript + wallet = Interface for deliverers
-- [ ] Deliverers can acces this portal using their self soverign identity. (or web2)
+### **Necessary functions of the user interface for the Deliverer's side:**
+- [ ] Deliverers can acces this portal using their self sovereign identity. (or web2)
 - [ ] Deliverers can accept and decline set price by client
 - [ ] Deliverers can confirm delivery
 - [ ] Deliverers can activate payment of the contract
-
-
-## Self Sovereign Identities
-- [ ] Issuue with Jolocom-lib
-- [ ] Can't acces it.
-
-## Idenitites guardian whom can overwrite both clients and deliverers
-- [ ] Need to add overwrite function to client and deliverer interface.
