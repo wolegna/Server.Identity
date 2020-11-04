@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="header">
-        <header style="height: 50px; width: 100%; background-color: red; text-align: center">
+        <header>
             <h1>Smart Contract Interface</h1>
         </header>
     </div>
@@ -26,33 +26,31 @@
 
     <div class="section">
         <section>
-            <h1 style="text-align: center">Client: To Do's</h1>
-            <p></p>
-            <hr>
-            <p></p>
+            <h2>Client Dashboard</h2>
+
         </section>
         <section>
             <p>
                 Step 1: Send proposal
+                <br>
+                <form>
+                <textarea rows="5" cols="30" name="text" placeholder="Enter Proposal"></textarea>
                 <button id="sendProp">Send</button>
-            </p>
-            <hr>
+            </form>
             <p>
                 Step 2: Enter signal amount
+                <br>
                 <input id="Signalamount" type="number">
                 <button id="sendButton">Send</button>
             </p>
-            <hr>
             <p>
                 Step 3: Confirm receiving
                 <button id="confrec">Confirm</button>
             </p>
-            <hr>
             <p>
                 Step 4: Transfer
                 <button id="trans">Transfer</button>
             </p>
-            <hr>
         </section>
     </div>
     <script type="text/javascript" src="script-onlyClient.js">
