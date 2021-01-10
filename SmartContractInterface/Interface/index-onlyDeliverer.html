@@ -1,59 +1,100 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Smart Contract UI Demo</title>
+    <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+    <title>Smart Contract UI Deliverer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="./node_modules/web3/dist/web3.min.js"></script>
-    <script src="./node_modules/bignumber.js"></script>
     <script>
-    window.onerror = function (msg) {
-        msg = msg.replace('Error: VM Exception while processing transaction: revert', 'Error: ')
-        alert(msg)
-        return true
+        window.onerror = function(msg) {
+            msg = msg.replace('Error: VM Exception while processing transaction: revert', 'Error: ');
+            alert(msg);
+            return true
         }
+
     </script>
 </head>
+
 <body>
     <div class="header">
-        <header style="height: 50px; width: 100%; background-color: red; text-align: center">
+        <header>
             <h1>Smart Contract Interface</h1>
+            <button id="Cancel">Cancel Agreement</button>
         </header>
     </div>
     <div class="section">
         <section>
-            <h1 style="text-align: center">Deliverer: To Do's</h1>
-            <p></p>
-            <hr>
+            <h2>Deliverer Dashboard</h2>
             <p></p>
         </section>
+        <pre id="log">Nerd Stats</pre>
         <section>
+            <div id="a1">
+                <h3>SOL 1: Intiate Contract</h3>
+                <form id="formuliertje" rows="5" cols="30">
+                    <button id="Accept">Accept</button>
+                    <br>
+                    <br>
+                    <button id="Deny">Deny</button>
+                    <label>
+                        <output name="textje" style='width:80%' placeholder='asdada'></output>
+                    </label>
+                </form>
+            </div>
+            <br>
+            <div id="a2">
+                <h3>SOL 2: Deliverer &amp; Wallet ID</h3>
+                <p> Deliverer ID
+                    <br>
+                    Wallet ID
+                </p>
+            </div>
+            <div id="a3">
+                <h3>SOL 3: Contract status</h3>
+                <p>Contract is completed</p>
+            </div>
+            <div id="a4">
+                <h3>SOL 4: Signal amount</h3>
+                <p>
+                    <label for="Signalamount">
+                        <output id="Signalamount" for="Signalamount" type="number"></output>
+                    </label>
+                    <button id="Agree">Agree</button>
+                </p>
+            </div>
+            <br>
+            <div id="a5">
+            <h3>SOL 5: Delivery status</h3>
             <p>
-                Step 1: Accept or deny proposal
-                <button id="Accept">Accept</button>
-                /
-                <button id="Deny">Deny</button>
+                <button id="confrec">Deliver</button>
+                <br>
+                Client has confirmed the work as being delivered.
             </p>
-            <hr>
+                </div>
+            <div id="a6">
+            <h3>SOL 6: Transfer</h3>
             <p>
-                Step 2: Now send your reply to the client
-                <button id="reply">Send</button>
+                The client has transferred the contract.<button id="trans">Transfer</button>
+                <br>
+                <br> You may also transfer the contract now.
             </p>
-            <hr>
-            <p>
-                Step 3: Confirm delivery
-                <button id="confdel">Confirm</button>
-            </p>
-            <hr>
-            <p>
-                Step 4: Transfer
-                <button id="trans">Transfer</button>
-            </p>
-            <hr>
+                </div>
+            <div name='current'  id='a'>
+                <h3>SOL 7: Contract complete</h3>
+                <p>
+                    Contract has been completed.
+                    <br>
+                    Thank you for using our paltform.
+                </p>
+            </div>
+
         </section>
     </div>
-    <script type="text/javascript" src="script-onlyDeliverer.js"></script>
+    <script type="text/javascript" src="script-onlyDeliverer.js">
+    </script>
 </body>
-</html>
